@@ -1,0 +1,33 @@
+.image{
+    background-image: url("image/adventure.png");
+    width:480px;
+    background-repeat: no-repeat;
+
+}
+
+h1{
+    font-family: "Roboto";
+    font-size: 37px;
+    line-height: 44px;
+    color: #2c2c2c;
+    padding: 32px, 20px,20px,20px;
+
+}
+
+p{
+    font-family: "Roboto";
+    font-size: 16px;
+    line-height: 16px;
+    color: #2c2c2c;
+    padding: 32px, 20px,20px,20px;
+}
+
+.my-cta-button{
+background: #e21717;
+font-family: "Roboto";
+
+height: 46px;
+width: 70px;
+color: #FFFFFF;
+
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>simple payroll sysytem</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script>
+	function payroll()
+    {
+	var name=document.getElementById("name").value
+	var days=Number(document.getElementById("days").value)
+	var hour=Number(document.getElementById("hour").value)
+    var rate=Number(document.getElementById("rate").value)
+	var dtn=Number(document.getElementById("dtn").value)
+    var tax=Number(document.getElementById("tax").value)
+    var rent=Number(document.getElementById("rent").value)
+	var gross=Number(document.getElementById("gross").value)
+    var net=Number(document.getElementById("net").value)
+
+gross= days*hour*rate
+tax= (gross*18)/100 
+rent= gross/20
+dtn= tax+rent
+net= gross-dtn
+
+
+document.getElementById("gross1").value=gross;
+document.getElementById("tax1").value=tax;
+document.getElementById("rent1").value=rent;
+document.getElementById("dtn1").value=dtn;
+document.getElementById("net1").value=net;
+document.getElementById("demo").innerHTML=name;
+}
+
+</script>
+<div class="container">
+  <h2>Simple Payroll System</h2>
+
+  <form>
+
+    <div class="form-group">
+        <label for="email">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-4">
+        <label for="pwd">No of days worked</label>
+        <input type="text" class="form-control" id="days" placeholder="No. of Days" name="days">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="pwd">No. of Hours</label>
+        <input type="text" class="form-control" id="hour" placeholder="No. of Hours" name="hour">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="pwd">Wage Rate</label>
+        <input type="text" class="form-control" id="rate" placeholder="Wage rate" name="rate">
+      </div>
+    
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="pwd">Gst 18% tax</label>
+        <input type="text" class="form-control" id="tax1" value="" name="tax1">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="pwd">Appartment Rent 5%</label>
+        <input type="text" class="form-control" id="rent1" value="" name="rent1">
+      </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-4">
+          <label for="pwd">Gross Salary</label>
+          <input type="text" class="form-control" id="gross1" value="" name="gross1">
+        </div>
+  
+        <div class="form-group col-md-4">
+          <label for="pwd">Deduction</label>
+          <input type="text" class="form-control" id="dtn1" value="" name="dtn1">
+        </div>
+  
+        <div class="form-group col-md-4">
+          <label for="pwd">Net Salary</label>
+          <input type="text" class="form-control" id="net1" value="" name="net1">
+        </div>
+      
+    </div>
+    <button type="button" class="btn btn-primary" onclick="payroll();">Compute</button>
+  </form>
+
+  <p id="demo"></p>
+</div>
+
+</body>
+</html>

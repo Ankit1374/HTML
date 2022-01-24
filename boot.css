@@ -1,0 +1,9 @@
+header{
+    height: 100px;
+}
+
+#banner{
+height: 900px;
+width: 100%;
+background-image: url("image/pizaa1.jpg");
+}
